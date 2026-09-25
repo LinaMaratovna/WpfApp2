@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Работа с матрицей" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть..." Click="btnOpen_Click"/>
+                <MenuItem Header="Сохранить..." Click="btnSave_Click"/>
+                <MenuItem Header="Выход" Click="btnClose_Click"/>
+            </MenuItem>
+            <MenuItem Header="Данные">
+                <MenuItem Header="Заполнить случайными числами" Click="btnFill_Click"/>
+                <MenuItem Header="Ввести матрицу вручную" Click="btnManualInput_Click"/>
+                <MenuItem Header="Очистить всё" Click="btnClear_Click"/>
+            </MenuItem>
+            <MenuItem Header="Действия">
+                <MenuItem Header="Рассчитать сумму" Click="btnCalc_Click"/>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="О программе..." Click="btnInfo_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Введите количество элементов матрицы в длину:" Margin="0,0,0,3"/>
+                <TextBox x:Name="txtDlinaCount" Margin="0,0,0,10"/>
+                <TextBlock Text="Введите количество элементов матрицы в ширину:" Margin="0,0,0,3"/>
+                <TextBox x:Name="txtShirinaCount" Margin="0,0,0,10"/>
+                <TextBlock Text="Результат расчета:" Margin="0,0,0,3"/>
+                <TextBox x:Name="Rezult" IsReadOnly="True" Margin="0,0,0,10"/>
+                <TextBlock Text="Сгенерированная матрица:" Margin="0,0,0,3"/>
+                <DataGrid x:Name="dataGrid1" Height="136" IsReadOnly="True"/>
+                <TextBlock Text="Или введите элементы матрицы в длину:" Margin="0,10,0,3"/>
+                <TextBox x:Name="txtManualDlinaArray"/>
+                <TextBlock Text="И введите элементы матрицы в ширину:" Margin="0,10,0,3" Height="15"/>
+                <TextBox x:Name="txtManualShirinaArray"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Top">
+                <Button Content="Заполнить" Click="btnFill_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="Ввод матрицы вручную" Click="btnManualInput_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="Рассчитать" Click="btnCalc_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="Сохранить" Click="btnSave_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="Открыть" Click="btnOpen_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="Выход" Click="btnClose_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="Очистить" Click="btnClear_Click" Margin="0,0,0,5" Height="30"/>
+                <Button Content="О программе" Click="btnInfo_Click" Margin="0,0,0,5" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
