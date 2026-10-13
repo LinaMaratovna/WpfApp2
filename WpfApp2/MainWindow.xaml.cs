@@ -5,9 +5,9 @@ using System.Data;
 using System.Windows;
 namespace WpfApp2
 {
-    /// <summary>
-    /// Главное окно приложения для работы с двумерным массивом (матрицей).
-    /// </summary>
+   // <summary>
+   // Главное окно приложения для работы с двумерным массивом (матрицей).
+   
     public partial class MainWindow : Window
     {
         private int[,] mas;
@@ -16,9 +16,9 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Заполнение матрицы случайными числами.
-        /// </summary>
+
+       // Заполнение матрицы случайными числами.
+       
         private void btnFill_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(txtDlinaCount.Text, out int rows) && rows > 0 &&
@@ -33,11 +33,11 @@ namespace WpfApp2
                 MessageBox.Show("Введите корректные положительные числа для длины и ширины матрицы!", "Ошибка");
             }
         }
-        /// <summary>
-        /// Ручной ввод матрицы через строку.
-        /// Формат: строки разделяются точкой с запятой, элементы - пробелами или запятыми
-        /// Пример в txtManualDlinaArray: 1 2 3; 4 5 6; 7 8 9
-        /// </summary>
+
+       // Ручной ввод матрицы через строку.
+       // Формат: строки разделяются точкой с запятой, элементы - пробелами или запятыми
+       // Пример в txtManualDlinaArray: 1 2 3; 4 5 6; 7 8 9
+       
         private void btnManualInput_Click(object sender, RoutedEventArgs e)
         {
             string line1 = txtManualDlinaArray.Text.Trim();
@@ -83,9 +83,9 @@ namespace WpfApp2
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка");
             }
         }
-        /// <summary>
-        /// Расчет суммы элементов матрицы.
-        /// </summary>
+
+       // Расчет суммы элементов матрицы.
+       
         private void btnCalc_Click(object sender, RoutedEventArgs e)
         {
             if (mas != null && mas.Length > 0)
@@ -99,9 +99,9 @@ namespace WpfApp2
                 MessageBox.Show("Сначала заполните матрицу!", "Предупреждение");
             }
         }
-        /// <summary>
-        /// Сохранение матрицы в файл.
-        /// </summary>
+
+       // Сохранение матрицы в файл.
+       
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             if (mas == null || mas.Length == 0)
@@ -127,9 +127,9 @@ namespace WpfApp2
                 }
             }
         }
-        /// <summary>
-        /// Открытие матрицы из файла.
-        /// </summary>
+
+       // Открытие матрицы из файла.
+       
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -151,9 +151,9 @@ namespace WpfApp2
                 }
             }
         }
-        /// <summary>
-        /// Очистка всех полей и таблицы.
-        /// </summary>
+
+       // Очистка всех полей и таблицы.
+       
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             txtDlinaCount.Clear();
@@ -166,23 +166,23 @@ namespace WpfApp2
             mas = null;
             txtDlinaCount.Focus();
         }
-        /// <summary>
-        /// Закрытие окна.
-        /// </summary>
+
+       // Закрытие окна.
+       
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
                 this.Close();
         }
-        /// <summary>
-        /// Информация о программе.
-        /// </summary>
+
+       // Информация о программе.
+       
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Пракитическая работа 2: 3. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов. Сделал: Афонин михаил Денисович");
+            MessageBox.Show("Пракитическая работа 2: 3. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов. Сделала: Мухутдинова Алина Маратовна");
         }
-        /// <summary>
-        /// Вспомогательный метод для обновления DataGrid.
-        /// </summary>
+
+// Вспомогательный метод для обновления DataGrid.
+       
         private void UpdateGrid()
         {
             if (mas == null) return;
@@ -202,7 +202,7 @@ namespace WpfApp2
             dataGrid1.ItemsSource = null;
             dataGrid1.Columns.Clear();
             dataGrid1.AutoGenerateColumns = true;
-            dataGrid1.ItemsSource = table.DefaultView;
+            dataGrid1.ItemsSource = table.DefaultView;///
         }
     }
 }
