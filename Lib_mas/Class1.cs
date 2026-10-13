@@ -96,7 +96,7 @@ namespace LibMas
                     result += matrix[i, j].ToString().PadLeft(6);
                 result += Environment.NewLine;
             }
-            return result;
+            return result;//лфыовлофывдо
         }
     }
 }
